@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <style type="text/css">
+         canvas { border: 1px solid black; }
+      </style>
+   </head>
+
+   <body>
+      <h1>Life</h1>
+      <div>
+         <label for="rules">Rule:</label>         
+         <select id="rules">
+            <!-- Added dynamically -->
+         </select>         
+      </div>
+      
+      <div>
+         <div><label for="name">Name:</label><label id="name"/></div>
+         <div><label for="rule">Rule:</label><label id="rule"/></div>
+         
+         <div>
+            <button id="start" disabled="true">Start</button>
+            <button id="stop" disabled="true">Stop</button>
+         </div>
+         
+         <canvas id="life"/>
+      </div>
+
+      <script type="text/javascript" src="life.js"></script>
+   </body>
+</html>
