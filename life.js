@@ -169,9 +169,9 @@ class Life {
    constructor() {
       
       this.sheetProps = {
-         width: 80,
-         height: 80,
-         cellSize: 5
+         width: 160, //80,
+         height: 80, //80,
+         cellSize: 5 //5
       };
 
       this.canvas = document.getElementById("life");
@@ -287,12 +287,12 @@ class Life {
       var offset = [
          { x:-1, y:-1 },
          { x:-1, y:0 },
-         { x:11, y:1 },
+         { x:1, y:1 },
          { x:0, y:-1 },
          { x:0, y:1 },
          { x:1, y:-1 },
          { x:1, y:0 },
-         { x:1, y:1 }
+         { x:-1, y:1 }
       ],
           count = 0;
       
