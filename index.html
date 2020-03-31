@@ -2,29 +2,148 @@
    <head>
       <style type="text/css">
          canvas { border: 1px solid black; }
+
+         .controls {
+            display: flex;
+            flex-flow: row;
+            margin-bottom: 10px;
+         }
+
+         .control-item {
+            flex: auto;
+            padding: 5px;
+            margin-right: 5px;
+            background-color: darkgray;
+            border-radius: 5px;
+         }
+
+         #control-end {
+            margin-right: 0px;
+         }
+
+         .form2 {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            grid-gap: 8px;
+         }
+         .form3 {
+            display: grid;
+            grid-template-columns: 100px 100px 1fr;
+            grid-gap: 8px;
+         }
+
+         .col1 {
+            grid-column: 1;
+         }
+         .col2 {
+            grid-column: 2;
+         }
+         .col3 {
+            grid-column: 3;
+         }
+         .col3b {
+            grid-column: 3;
+            grid-row-start: 1;
+            grid-row-end: span 4;
+         }
+
+         .start-icon {
+            /* This combination of attributes will resize the SVG to the size of the parent */
+            background: url(start-icon.svg);
+            background-size: cover;
+            width: 100%;
+            height: 0;
+            padding: 0;
+            padding-bottom: 100%;
+         }
+         .stop-icon {
+            /* This combination of attributes will resize the SVG to the size of the parent */
+            background: url(stop-icon.svg);
+            background-size: cover;
+            width: 100%;
+            height: 0;
+            padding: 0;
+            padding-bottom: 100%;
+         }
+         .button-bar-item {
+            width: 50px;
+            border-radius: 5px;
+            margin-right: 5px;
+         }
+
+         .button-bar {
+            display: flex;
+            flex-flow: row;
+            margin-bottom: 10px;
+         }
+
+         .view {
+            width: 100%;
+            height: auto;
+            overflow: scroll;
+         }
+
       </style>
    </head>
 
    <body>
-      <h1>Life</h1>
-      <div>
-         <label for="rules">Rule:</label>         
-         <select id="rules">
-            <!-- Added dynamically -->
-         </select>         
-      </div>
+      <header>
+         <h1>Life</h1>
+      </header>
       
-      <div>
-         <div><label for="name">Name:</label><label id="name"/></div>
-         <div><label for="rule">Rule:</label><label id="rule"/></div>
+      <main>
+
+         <section title="controls" class="controls">
+
+               <div class="control-item form2">
+                  <label class="col1" for="width">Width</label>
+                  <input class="col2" type="text" readonly="true" id="widthvalue"/>
+                  <input class="col3" type="range" min="20" max="300" step="10" id="width" />
+
+                  <label class="col1" for="height">Height</label>
+                  <input class="col2" type="text" readonly="true" id="heightvalue"/>
+                  <input class="col3" type="range" min="20" max="300" step="10" id="height" />
+
+                  <label class="col1" for="cell">Cell</label>
+                  <input class="col2" type="text" id="cellvalue"/>
+                  <input class="col3" type="range" min="2" max="20" step="1" id="cell" />
+               </div>
+
+               <div class="control-item form3" id="control-end">
+                  <label class="col1" for="rules">Rule</label>
+                  <select class="col2" id="rules">
+                     <!-- Added dynamically -->
+                  </select>
+                  <textarea class="col3b" id="description" readonly="true" rows="5"> </textarea>
+                  <label class="col1" for="name">Name</label>
+                  <label class="col2" id="name"></label>
+                  <label class="col1" for="author">Author</label>
+                  <label class="col2" id="author"></label>
+                  <label class="col1" for="rule">Survive/Born</label>
+                  <label class="col2" id="rule"></label>
+               </div>
+
+         </section>
+
+         <section title="display" class="display">
+
+            <div class="button-bar">
+               <button class="button-bar-item" id="start" disabled="true">
+                  <div class="start-icon "/>
+               </button>
+               <button class="button-bar-item" id="stop" disabled="true">
+                  <div class="stop-icon "/>
+               </button>
+            </div>
+
+            <div class="view">
+               <canvas id="life"/>
+            </div>
+
+         </section>
          
-         <div>
-            <button id="start" disabled="true">Start</button>
-            <button id="stop" disabled="true">Stop</button>
-         </div>
-         
-         <canvas id="life"/>
-      </div>
+      </main>
+
 
       <script type="text/javascript" src="life.js"></script>
    </body>
