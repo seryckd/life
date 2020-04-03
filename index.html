@@ -3,6 +3,13 @@
       <style type="text/css">
          canvas { border: 1px solid black; }
 
+         h1 {
+            color: #8C2318;
+         }
+
+         textarea {
+           resize: none;
+         }
          .controls {
             display: flex;
             flex-flow: row;
@@ -13,38 +20,47 @@
             flex: auto;
             padding: 5px;
             margin-right: 5px;
-            background-color: darkgray;
+            background-color: #8C2318;
             border-radius: 5px;
+            color: #FFFFFF;
+            border: 3px solid #BFB35A;
          }
 
          #control-end {
             margin-right: 0px;
          }
 
-         .form2 {
+         .container {
             display: grid;
-            grid-template-columns: 100px 1fr;
+            grid-template-columns: repeat(12, minmax(0,1fr));
             grid-gap: 8px;
-         }
-         .form3 {
-            display: grid;
-            grid-template-columns: 100px 100px 1fr;
-            grid-gap: 8px;
+
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            background-color: #88A65E;
          }
 
-         .col1 {
-            grid-column: 1;
+         .container .name {
+            grid-column: 1 / 4;
+            xbackground-color: #8C2318;
+            xborder-radius: 5px;
+            color: white;
+            display: grid;
+            align-items: center;
+            border-right: 1px solid black;
          }
-         .col2 {
-            grid-column: 2;
+         .container .value {
+            grid-column: 4 / 7;
+            border-radius: 5px;
          }
-         .col3 {
-            grid-column: 3;
+         .container .slider {
+            grid-column: 7 / 13;
          }
-         .col3b {
-            grid-column: 3;
-            grid-row-start: 1;
-            grid-row-end: span 4;
+         .container .desc {
+            grid-column: 7 / 13;
+            grid-row: 1 / 5;
+            border-radius: 5px;
          }
 
          .start-icon {
@@ -70,7 +86,6 @@
             border-radius: 5px;
             margin-right: 5px;
          }
-
          .button-bar {
             display: flex;
             flex-flow: row;
@@ -95,32 +110,32 @@
 
          <section title="controls" class="controls">
 
-               <div class="control-item form2">
-                  <label class="col1" for="width">Width</label>
-                  <input class="col2" type="text" readonly="true" id="widthvalue"/>
-                  <input class="col3" type="range" min="20" max="300" step="10" id="width" />
+               <div class="container">
+                  <label class="name" for="width">Width</label>
+                  <input class="value" type="text" readonly="true" id="widthvalue"/>
+                  <input class="slider" type="range" min="20" max="300" step="10" id="width" />
 
-                  <label class="col1" for="height">Height</label>
-                  <input class="col2" type="text" readonly="true" id="heightvalue"/>
-                  <input class="col3" type="range" min="20" max="300" step="10" id="height" />
+                  <label class="name" for="height">Height</label>
+                  <input class="value" type="text" readonly="true" id="heightvalue"/>
+                  <input class="slider" type="range" min="20" max="300" step="10" id="height" />
 
-                  <label class="col1" for="cell">Cell</label>
-                  <input class="col2" type="text" id="cellvalue"/>
-                  <input class="col3" type="range" min="2" max="20" step="1" id="cell" />
+                  <label class="name" for="cell">Cell</label>
+                  <input class="value" type="text" id="cellvalue"/>
+                  <input class="slider" type="range" min="2" max="20" step="1" id="cell" />
                </div>
 
-               <div class="control-item form3" id="control-end">
-                  <label class="col1" for="rules">Rule</label>
-                  <select class="col2" id="rules">
+               <div class="container" id="control-end">
+                  <label class="name" for="rules">Rule</label>
+                  <select class="value" id="rules">
                      <!-- Added dynamically -->
                   </select>
-                  <textarea class="col3b" id="description" readonly="true" rows="5"> </textarea>
-                  <label class="col1" for="name">Name</label>
-                  <label class="col2" id="name"></label>
-                  <label class="col1" for="author">Author</label>
-                  <label class="col2" id="author"></label>
-                  <label class="col1" for="rule">Survive/Born</label>
-                  <label class="col2" id="rule"></label>
+                  <textarea class="desc" id="description" readonly="true" disabled="true"> </textarea>
+                  <label class="name" for="name">Name</label>
+                  <label class="value" id="name"></label>
+                  <label class="name" for="author">Author</label>
+                  <label class="value" id="author"></label>
+                  <label class="name" for="rule">Survive/Born</label>
+                  <label class="value" id="rule"></label>
                </div>
 
          </section>
@@ -145,6 +160,7 @@
       </main>
 
 
+      <script type="text/javascript" src="colours.js"></script>
       <script type="text/javascript" src="life.js"></script>
    </body>
 </html>
