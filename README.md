@@ -11,5 +11,5 @@ Yes, another game of life on canvas. Written just to be able to view all the dif
 * [Rules of Life](http://psoup.math.wisc.edu/mcell/rullex_life.html)
 * [Colour Palette](https://www.colourlovers.com/palette/110225/Vintage_Modern)
 * [Colour Sequence Generator](http://livingqlikview.com/color-sequence-generator/)
-* [canvas scrolling] (https://stackoverflow.com/questions/16128604/scrollable-canvas-inside-div)
+* [canvas scrolling](https://stackoverflow.com/questions/16128604/scrollable-canvas-inside-div)
 * [pmav's Game of Life](http://pmav.eu/stuff/javascript-game-of-life-v3.1.1)
