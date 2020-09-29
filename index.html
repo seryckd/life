@@ -1,5 +1,6 @@
 <html>
    <head>
+      <!--<meta name="life" content="width=device-width">-->
       <style type="text/css">
          canvas { border: 1px solid black; }
 
@@ -92,11 +93,21 @@
             margin-bottom: 10px;
          }
 
-         .view {
-            width: 100%;
-            height: auto;
-            overflow: scroll;
+         .display {
+            display: flex;
+            flex-flow: column;
          }
+
+         .viewX {
+            display: flex;
+            flex-flow: row;
+         }
+
+         /*
+         canvas {
+            max-height: 600px;
+            max-width: 600px;
+         }*/
 
       </style>
    </head>
@@ -143,12 +154,20 @@
          <section title="display" class="display">
 
             <div class="button-bar">
-               <button class="button-bar-item" id="start" disabled="true">
+               <button class="button-bar-item" title="start" id="start" disabled="true">
                   <div class="start-icon "/>
                </button>
                <button class="button-bar-item" id="stop" disabled="true">
                   <div class="stop-icon "/>
                </button>
+               <input type="color" class="button-bar-item" id="begin" value="#FE2E2E"/>
+               <label class="button-bar-item" id="Colour1"></label>
+               <label class="button-bar-item" id="Colour2"></label>
+               <label class="button-bar-item" id="Colour3"></label>
+               <label class="button-bar-item" id="Colour4"></label>
+               <label class="button-bar-item" id="Colour5"></label>
+               <label class="button-bar-item" id="Colour6"></label>
+               <input type="color" class="button-bar-item" id="end"  value="#2EFE2E"/>
             </div>
 
             <div class="view">
@@ -159,9 +178,8 @@
          
       </main>
 
+     <!-- <script type="application/javascript" src="life.js"></script>-->
 
-      <script type="text/javascript" src="rules.js"></script>
-      <script type="text/javascript" src="colours.js"></script>
-      <script type="text/javascript" src="life.js"></script>
+      <script type="module" src="life.js"></script>
    </body>
 </html>

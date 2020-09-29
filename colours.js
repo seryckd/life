@@ -1,5 +1,5 @@
 /*jshint browser: true, esversion: 6*/
-class Colours {
+export class Colours {
 
    constructor() {
       this.start = { r:0, g:0, b:0};
@@ -47,7 +47,7 @@ class Colours {
          colours = [ this.rgbToHex(this.start) ],
          c = 0;
 
-      for (c=1; c<count-2; c++) {
+      for (c=1; c<count-1; c++) {
          colours.push(this.rgbToHex({
             r: Math.round(this.start.r + c*rint),
             g: Math.round(this.start.g + c*gint),

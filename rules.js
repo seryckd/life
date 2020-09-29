@@ -1,4 +1,5 @@
-var RULES = [
+/*jshint browser: true, esversion: 6*/
+export const Rules = [
    {
       "id": 0,
       "name" : "2x2",
